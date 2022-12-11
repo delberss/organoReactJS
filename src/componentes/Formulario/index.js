@@ -4,9 +4,10 @@ import ListaSuspensa from '../ListaSuspensa';
 import Botao from '../Botao';
 import { useState } from 'react';
 
-const Formulario = () => {
+const Formulario = (props) => {
     const times = ["Front-end", "Back-end", "Full Stack"];
 
+    // HOOK
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
     const [imagem, setImagem] = useState('');
@@ -14,14 +15,13 @@ const Formulario = () => {
 
     const aoSalvar = (eventoJS) => {
         eventoJS.preventDefault();
-        console.log('Form foi submetido!');
-        console.log('Nome: ' + nome, 'Cargo: ' + cargo, 'Imagem: ' + imagem, 'Time: ' + time);
+        props.aoColaboradorCadastrado({nome,cargo,imagem,time});
     }
 
     return(
         <section className='formulario'>
-            <form onSubmit={aoSalvar}>
-                <h2>Preencha os dados para criar o card</h2>
+            <form onSubmit={aoSalvar} >
+                <h2>Preencha os dados para criar o card de colaborador</h2>
                 <CampoTexto 
                     valor={nome} aoAlterado={valor => setNome(valor)} obrigatorio={true} label="Nome"
                     placeholder="Digite seu nome" />
