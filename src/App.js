@@ -7,7 +7,7 @@ function App() {
   const times = [
   {
     nome: 'Programação',
-    corPrimaria: '57C278',
+    corPrimaria: '#57C278',
     corSecundaria: 'D9F7E9'
   },
   {
@@ -47,7 +47,6 @@ function App() {
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
     setColaboradores([...colaboradores,colaborador]);
-    console.log(colaboradores);
   }
 
 

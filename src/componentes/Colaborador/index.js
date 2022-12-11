@@ -1,10 +1,10 @@
 import './Colaborador.css'
 
 // USANDO DESESTRUTURAÇÃO - SUBSTITUINDO PROPS PADRÃO
-const Colaborador = ({nome, cargo, imagem}) => {
+const Colaborador = ({nome, cargo, imagem, corDeFundo}) => {
     return(
         <div className='colaborador'>
-            <div className='cabecalho'>
+            <div className='cabecalho' style={{backgroundColor: corDeFundo}}>
                 <img src={imagem} alt={nome} />
             </div>
 
