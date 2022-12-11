@@ -5,8 +5,6 @@ import Botao from '../Botao';
 import { useState } from 'react';
 
 const Formulario = (props) => {
-    const times = ["Front-end", "Back-end", "Full Stack"];
-
     // HOOK
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
@@ -31,7 +29,7 @@ const Formulario = (props) => {
                 <CampoTexto 
                     valor={imagem} aoAlterado={valor => setImagem(valor)} label="Imagem" 
                     placeholder="Digite o endereço da imagem"/>
-                <ListaSuspensa valor={time} aoAlterado={valor => setTime(valor)} obrigatorio={true} label="Time" itens={times}/>
+                <ListaSuspensa valor={time} aoAlterado={valor => setTime(valor)} obrigatorio={true} label="Time" itens={props.times}/>
                 <Botao>
                     Criar Card
                 </Botao>
